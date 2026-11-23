@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Med Karim Bchini — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE work: a recruiter-facing CV, calm and exact
+   IDEA a printed career dossier: one cover band, four tabbed role sheets, then the CV itself
+   PICTURE the four role sheets as large selectable tabs, the active one opening into the CV
+   COLOUR deep green #12512a band (from the reference site), white paper, mint #e6f2ea surfaces, one warm accent for figures
+   TYPE Hanken Grotesk 300 large + Hanken Grotesk
+   LAYOUT laptop: cover band with title + stats left, 2x2 role tabs right; phone: title, tabs stacked, CV below */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0e1511);--ink:light-dark(#111a14,#e8efe9);--mut:light-dark(#4d5b52,#a4b3a8);--g:#12512a;--g2:light-dark(#1d7a42,#5fd08b);--soft:light-dark(#e9f3ec,#16241b);--line:light-dark(#d3e2d8,#26392c);--acc:light-dark(#b4560f,#f2a35e);--card:light-dark(#ffffff,#121c16)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Hanken Grotesk",system-ui,sans-serif;overflow-x:clip}
+a{color:var(--g2)}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(24px,4vw,56px) max(5vw,16px)}
+header.top{background:var(--g);color:#fff;padding:12px max(5vw,16px)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-weight:600;letter-spacing:-.01em;color:#fff;text-decoration:none}
+.lang{display:flex;border:1px solid rgba(255,255,255,.45);border-radius:999px;overflow:hidden}
+.lang button{all:unset;cursor:pointer;padding:8px 16px;min-height:28px;font-weight:600;font-size:14px;color:#fff}
+.lang button[aria-pressed=true]{background:#fff;color:var(--g)}
+.lang button:focus-visible,.role:focus-visible,.more:focus-visible{outline:3px solid #9fe0b6;outline-offset:2px}
+.cover{background:var(--g);color:#fff;padding-top:clamp(20px,3vw,40px)}
+.cover .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(24px,4vw,56px);align-items:start}
+.cover h1{font-weight:300;font-size:clamp(32px,4.4vw,50px);line-height:1.05;letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
+.cover p{color:#d6eadc;margin:0 0 22px;max-width:46ch}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.2);border-radius:12px;overflow:hidden}
+.facts div{background:#0f4523;padding:12px 14px}
+.facts b{display:block;font-size:20px;font-weight:600;white-space:nowrap}
+.facts span{font-size:13px;color:#cfe5d6}
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.roles .role:first-child{grid-column:1/-1}
+.role{all:unset;box-sizing:border-box;cursor:pointer;background:#0f4523;border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;transition:background .2s,transform .2s}
+.role:hover{background:#13562c}
+.role[aria-current=true]{background:#fff;color:var(--g);border-color:#fff}
+.role h3{margin:0;font-size:18px;line-height:1.2;font-weight:600}
+.role .tl{font-size:14px;opacity:.85}
+.role .tags{display:flex;flex-wrap:wrap;gap:5px}
+.role .tags i{font-style:normal;font-size:13px;padding:2px 8px;border-radius:999px;background:rgba(255,255,255,.12)}
+.role[aria-current=true] .tags i{background:#e6f2ea}
+.role .go{font-size:13px;font-weight:600;margin-top:auto}
+.role[aria-current=true] .go{color:var(--acc)}
+.profile{background:var(--g);color:#fff;padding-bottom:0;padding-top:clamp(20px,3vw,36px)}
+.prof{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(16px,3vw,32px);align-items:center;background:var(--bg);color:var(--ink);border-radius:18px 18px 0 0;padding:clamp(18px,3vw,32px)}
+.prof img{width:clamp(92px,12vw,132px);aspect-ratio:1;border-radius:50%;object-fit:cover;border:4px solid var(--soft)}
+.prof h2{margin:0;font-size:clamp(28px,3.6vw,42px);line-height:1.05;letter-spacing:-.02em;font-weight:600;text-wrap:balance}
+.prof .sub{color:var(--mut);margin:6px 0 12px}
+.kpis{display:flex;flex-wrap:wrap;gap:10px 28px}
+.kpis div b{display:block;font-size:24px;font-weight:600;color:var(--acc);white-space:nowrap;line-height:1.1}
+.kpis div span{font-size:13px;color:var(--mut)}
+nav.sec{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:0 max(5vw,16px)}
+nav.sec .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.sec a{flex:none;padding:12px 12px;text-decoration:none;color:var(--mut);font-weight:500;font-size:15px;border-bottom:2px solid transparent}
+nav.sec a:hover{color:var(--ink);border-color:var(--g2)}
+main .band{padding-top:clamp(22px,3vw,40px);padding-bottom:0}
+section{scroll-margin-top:60px}
+h4{font-size:24px;letter-spacing:-.01em;margin:0 0 14px;font-weight:600}
+.two{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(18px,3vw,40px)}
+.about p{margin:0 0 12px;max-width:68ch}
+.contact{background:var(--soft);border-radius:14px;padding:18px 20px}
+.contact dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 14px;font-size:15px}
+.contact dt{color:var(--mut)}
+.contact dd{margin:0;overflow-wrap:anywhere}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.sk{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--card)}
+.sk b{display:block;margin-bottom:8px;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips i{font-style:normal;font-size:14px;padding:3px 10px;border-radius:999px;background:var(--soft)}
+.job{display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 28px;padding:18px 0;border-top:1px solid var(--line)}
+.job .when{color:var(--mut);font-size:14px}
+.job .when b{display:block;color:var(--ink);font-size:15px}
+.job h5{margin:0 0 2px;font-size:18px;font-weight:600}
+.job .co{color:var(--g2);font-weight:600}
+.job .team{font-size:14px;font-weight:600;color:var(--mut);margin:12px 0 4px}
+.job ul{margin:6px 0 0;padding-left:18px}
+.job li{margin:4px 0}
+.job li strong,.about strong{color:var(--ink);font-weight:700}
+.more{all:unset;cursor:pointer;margin:6px 0 0;padding:10px 18px;border:1px solid var(--line);border-radius:999px;font-weight:600;font-size:15px}
+.more:hover{background:var(--soft)}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.pj{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--card);display:flex;flex-direction:column;gap:6px}
+.pj .st{font-size:13px;font-weight:600;color:var(--g2)}
+.pj h5{margin:0;font-size:17px}
+.pj p{margin:0;font-size:15px;color:var(--mut)}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;list-style:none;padding:0;margin:0}
+.edu li{background:var(--soft);border-radius:12px;padding:14px 16px}
+.edu li span{display:block;color:var(--mut);font-size:14px}
+footer{margin-top:clamp(32px,5vw,64px);background:var(--g);color:#d6eadc;padding:24px max(5vw,16px);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:#fff}
+.fade{animation:f .35s ease}
+@keyframes f{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.fade{animation:none}.role{transition:none}}
+
+.dl{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:10px 18px;min-height:44px;border-radius:999px;background:var(--g);color:#fff;font-weight:600;font-size:15px}
+.dl:hover{background:#0d3d20}
+.dl:focus-visible{outline:3px solid var(--g2);outline-offset:2px}
+.dl[hidden]{display:none}
+.dlmsg{font-size:14px;color:var(--mut);margin-left:10px}
+@page{size:A4;margin:12mm 12mm 14mm}
+@media(max-width:900px){.cover .wrap{grid-template-columns:minmax(0,1fr)}.two{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.roles{grid-template-columns:minmax(0,1fr)}.job{grid-template-columns:minmax(0,1fr)}.prof{grid-template-columns:minmax(0,1fr)}.facts b{font-size:17px}}
+@media print{
+:root{color-scheme:light}
+body{font-size:11.2px;line-height:1.42;background:#fff;color:#111a14;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+header.top,.cover,nav.sec,#more,.dl,.dlmsg,footer,.fade{animation:none}
+header.top,.cover,nav.sec,#more,.dl,.dlmsg,footer{display:none!important}
+.band{padding:0 0 10px}
+.profile{background:#fff;color:#111a14;padding:0}
+.prof{padding:0 0 12px;border-bottom:2px solid #12512a;border-radius:0;grid-template-columns:auto minmax(0,1fr)}
+.prof img{width:92px}
+.prof h2{font-size:28px}
+.kpis div b{font-size:19px}
+main .band{padding-top:12px}
+h4{font-size:17px;margin:0 0 8px;color:#12512a}
+.two{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px}
+.contact{padding:12px 14px}.contact dl{font-size:12px;gap:4px 10px}
+.skills{display:block}.sk{border:0;border-radius:0;padding:2px 0;display:grid;grid-template-columns:150px minmax(0,1fr);gap:0 10px;background:none;margin:0 0 3px}.sk b{margin:0}.chips{display:block;line-height:1.45}.chips i{display:inline}.sk{align-items:start}.chips i{background:none;padding:0;font-size:11.2px}.chips i:not(:last-child)::after{content:' ·'}
+.sk{padding:9px 11px}.chips i{font-size:11.5px;padding:1px 8px}
+.job{grid-template-columns:118px minmax(0,1fr);gap:4px 16px;padding:7px 0}.job li{break-inside:avoid}.job h5,.job .team{break-after:avoid}.job .when{font-size:11px}.job .when b{font-size:11.5px}.job .team{font-size:11px;margin:6px 0 2px}.job ul{margin:3px 0 0}
+.job h5{font-size:13px}.job li{margin:2px 0}
+.projects{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pj{padding:10px 12px;break-inside:avoid}.pj p{font-size:12px}
+.edu{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.edu li{padding:9px 11px}
+.sk,.edu li{break-inside:avoid}
+h4{break-after:avoid}
+.about p{margin:0 0 7px;max-width:none}.pj h5{font-size:13px}.pj{gap:3px}.edu li span{font-size:11px}.edu b{font-size:12px}.sk b{font-size:11.2px;margin:0;color:#12512a}.prof .sub{margin:3px 0 6px}.kpis div span{font-size:11px}main .band{padding-top:8px}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#fr-fullstack">Med Karim Bchini</a>
+  <div class="lang" role="group" aria-label="Langue / Language">
+    <button id="l-fr" type="button" data-l="fr">FR</button><button id="l-en" type="button" data-l="en">EN</button>
+  </div>
+</div></header>
+
+<div class="cover band"><div class="wrap">
+  <div>
+    <h1 id="c-h1"></h1>
+    <p id="c-p"></p>
+    <div class="facts" id="c-facts"></div>
+  </div>
+  <div class="roles" id="roles"></div>
+</div></div>
+
+<div class="profile band"><div class="wrap"><div class="prof" id="prof"></div></div></div>
+<nav class="sec" aria-label="Sections"><div class="wrap" id="secnav"></div></nav>
+
+<main id="main"></main>
+<footer><div class="wrap"><span id="foot"></span><span><a href="https://www.linkedin.com/in/bchinimedkarim/">LinkedIn</a> · <a href="https://github.com/karimtn">GitHub</a></span></div></footer>
+
+<script>
+{
+const PHOTO='data:image/jpeg;base64,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';
+const T={
+fr:{h1:'Un développeur, cinq CV ciblés.',p:'Les mêmes 15 ans d\'expérience, présentés pour cinq postes différents. Choisissez le profil qui correspond à votre recrutement.',
+facts:[['15+ ans','d\'expérience'],['Paris','relocalisation en cours'],['CDI','poste senior recherché']],
+view:'Profil affiché',open:'Voir ce profil →',
+nav:{about:'À propos',skills:'Compétences',exp:'Expérience',proj:'Projets',edu:'Formation'},
+contact:'Contact',email:'E-mail',phone:'Téléphone',loc:'Lieu',locv:'Paris, France (relocalisation en cours)',langs:'Langues',langsv:'Français (courant) · Anglais (courant) · Arabe (maternelle)',permit:'Autorisation',permitv:'Éligible Passeport Talent (salarié qualifié), sans opposabilité de la situation de l\'emploi',
+pdf:'Télécharger le PDF',pdfwait:'Préparation du PDF…',pdfno:'Téléchargement annulé.',pdferr:'Le PDF n\'est pas disponible ici.',all:n=>`Tout afficher (${n})`,less:'Réduire',foot:'© 2026 Med Karim Bchini',
+eduT:'Formation et certifications'},
+en:{h1:'One developer, five role-specific CVs.',p:'The same 15 years of experience, framed for five different roles. Pick the profile that matches your hiring need.',
+facts:[['15+ yrs','experience'],['Paris','relocating now'],['Permanent','senior role wanted']],
+view:'Currently viewing',open:'Open profile →',
+nav:{about:'About',skills:'Skills',exp:'Experience',proj:'Projects',edu:'Education'},
+contact:'Contact',email:'Email',phone:'Phone',loc:'Location',locv:'Paris, France (relocating now)',langs:'Languages',langsv:'French (fluent) · English (fluent) · Arabic (native)',permit:'Work permit',permitv:'Eligible for the French Talent Passport (qualified employee), no labour-market test',
+pdf:'Download PDF',pdfwait:'Preparing the PDF…',pdfno:'Download cancelled.',pdferr:'The PDF is not available here.',all:n=>`Show all (${n})`,less:'Show less',foot:'© 2026 Med Karim Bchini',
+eduT:'Education and certifications'}};
+
+const V={
+lead:{tags:['Encadrement d\'équipe|Team leadership','CI/CD · Docker','React · Node.js','Revue de code|Code review'],
+ fr:{t:'Tech Lead Full-Stack',s:'React · TypeScript · Node.js · CI/CD',tl:'Un lead qui code : décisions techniques, qualité et accompagnement de l\'équipe.',
+  k:[['4 devs','encadrés sur deux produits'],['2 semaines','pour lancer un nouveau pays'],['+30 %','de ventes en ligne']],
+  a:['Tech Lead Full-Stack avec <strong>plus de 15 ans d\'expérience</strong> en développement web, dont près de 2 ans à <strong>encadrer une équipe de 4 développeurs</strong> sur deux produits chez NEXT : choix techniques, découpage des besoins métier, revue de code et mise en place de la <strong>CI/CD et de Docker</strong> dans une équipe qui n\'en avait pas.',
+     'Depuis 2022, développeur senior full-stack chez autobiz, je pilote des chantiers à fort impact : refonte React déployée sur <strong>13 marques et 10 pays</strong>, plateforme en marque blanche qui permet de <strong>lancer un pays en 2 semaines</strong>, <strong>+30 %</strong> de ventes en ligne et fonctionnalités d\'IA validées par tests A/B.',
+     'Je fais le lien entre le besoin métier et la solution technique, je garde la main dans le code et je porte la qualité de l\'équipe : tests E2E, revue de code, performance et documentation.']},
+ en:{t:'Full-Stack Tech Lead',s:'React · TypeScript · Node.js · CI/CD',tl:'A hands-on lead: technical decisions, quality and team coaching.',
+  k:[['4 devs','led across two products'],['2 weeks','to launch a new country'],['+30%','online sales']],
+  a:['Full-Stack Tech Lead with <strong>15+ years of web development experience</strong>, including almost 2 years <strong>leading a team of 4 developers</strong> on two products at NEXT: technical decisions, breaking down business needs, code review, and rolling out <strong>CI/CD and Docker</strong> to a team that had neither.',
+     'Since 2022, as a senior full-stack developer at autobiz, I drive high-impact projects: a React rebuild deployed across <strong>13 brands and 10 countries</strong>, a white-label platform that <strong>launches a country in 2 weeks</strong>, <strong>+30%</strong> online sales and AI features validated with A/B tests.',
+     'I bridge business needs and technical solutions, stay hands-on in the code and own team quality: E2E tests, code review, performance and documentation.']},
+ sk:['lead','front','back','cloud','quality','ai']},
+ia:{tags:['LLM','RAG','Agents · MCP','A/B testing IA|AI A/B testing'],
+ fr:{t:'Ingénieur IA appliquée',s:'LLM · RAG · Agents · Full-stack JavaScript',tl:'Des fonctionnalités IA en production, mesurées par tests A/B.',
+  k:[['62 %','des cas : l\'IA détecte plus de frais que l\'humain'],['280 €','économisés en moyenne par véhicule'],['15+ ans','d\'ingénierie logicielle']],
+  a:['Ingénieur full-stack depuis plus de 15 ans, spécialisé dans l\'<strong>IA appliquée en production</strong>. J\'ai construit un <strong>système RAG de bout en bout</strong> (embeddings, recherche vectorielle, synthèse par LLM) et intégré des <strong>API d\'IA</strong> dans des produits à fort trafic.',
+     'Je ne livre pas des démos : chez autobiz, l\'inspection automobile par IA que j\'ai intégrée détecte plus de frais de remise en état que l\'inspection humaine dans <strong>62 % des cas</strong>, soit <strong>280 € économisés en moyenne par véhicule</strong>, résultat validé par tests A/B.',
+     'Mon socle React, Node.js, TypeScript et AWS me permet de porter un système IA du cas d\'usage jusqu\'à l\'interface, au déploiement et au suivi des coûts.']},
+ en:{t:'Applied AI Engineer',s:'LLM · RAG · Agents · Full-stack JavaScript',tl:'AI features in production, measured with A/B tests.',
+  k:[['62%','of cases: AI finds more costs than humans'],['€280','saved on average per vehicle'],['15+ yrs','of software engineering']],
+  a:['Full-stack engineer for 15+ years, focused on <strong>applied AI in production</strong>. I built an <strong>end-to-end RAG system</strong> (embeddings, vector search, LLM synthesis) and integrated <strong>AI APIs</strong> into high-traffic products.',
+     'I ship results, not demos: at autobiz, the AI vehicle inspection I integrated finds more reconditioning costs than the human inspection in <strong>62% of cases</strong>, saving <strong>€280 on average per vehicle</strong>, validated with A/B tests.',
+     'My React, Node.js, TypeScript and AWS background lets me take an AI system from use case to interface, deployment and cost monitoring.']},
+ sk:['ai','back','front','data','cloud','quality']},
+fullstack:{tags:['React','TypeScript','Node.js','AWS'],
+ fr:{t:'Développeur Full-Stack JavaScript Senior',s:'React · Next.js · TypeScript · Node.js · AWS',tl:'Des produits à fort trafic, de l\'API à l\'interface.',
+  k:[['+30 %','de ventes en ligne'],['13 marques','10 pays, une base de code'],['4 devs','encadrés chez NEXT']],
+  a:['Développeur full-stack JavaScript avec <strong>plus de 15 ans d\'expérience</strong> sur des applications web de production, des API Node.js et du serverless AWS jusqu\'aux interfaces React et Next.js.',
+     'Depuis 2022, je développe chez autobiz des produits à fort trafic pour le marché automobile : refonte React déployée sur <strong>13 marques et 10 pays</strong>, plateforme en marque blanche qui permet de <strong>lancer un pays en 2 semaines</strong>, <strong>+30 %</strong> de ventes en ligne et <strong>+20 %</strong> sur le parcours « vendre ma voiture ».',
+     'J\'ai aussi encadré <strong>une équipe de 4 développeurs</strong> sur deux produits (NEXT). J\'apporte la qualité d\'équipe : CI/CD, Docker, tests E2E, revue de code et performance.']},
+ en:{t:'Senior Full-Stack JavaScript Developer',s:'React · Next.js · TypeScript · Node.js · AWS',tl:'High-traffic products, from API to interface.',
+  k:[['+30%','online sales'],['13 brands','10 countries, one codebase'],['4 devs','led at NEXT']],
+  a:['Full-stack JavaScript developer with <strong>15+ years of experience</strong> on production web applications, from Node.js APIs and AWS serverless to React and Next.js interfaces.',
+     'Since 2022 I have been building high-traffic automotive products at autobiz: a React rebuild deployed across <strong>13 brands and 10 countries</strong>, a white-label platform that <strong>launches a new country in 2 weeks</strong>, <strong>+30%</strong> online sales and <strong>+20%</strong> on the "sell my car" flow.',
+     'I also led <strong>a team of 4 developers</strong> on two products (NEXT). I bring team-level quality: CI/CD, Docker, E2E tests, code review and performance.']},
+ sk:['front','back','data','cloud','quality','ai','lead']},
+back:{tags:['Node.js','TypeScript','AWS Lambda · SNS','API REST · GraphQL'],
+ fr:{t:'Développeur Back-End JavaScript Senior',s:'Node.js · TypeScript · Event-driven · AWS serverless',tl:'Des services Node.js fiables, découplés et sobres en coûts.',
+  k:[['AWS','Lambda · SNS en production'],['+30 %','de ventes en ligne'],['15+ ans','de systèmes web']],
+  a:['Développeur à dominante back-end avec <strong>plus de 15 ans d\'expérience</strong> : services <strong>Node.js / TypeScript</strong>, API REST et GraphQL, et <strong>serverless event-driven sur AWS</strong> (SNS en pub/sub, consommateurs Lambda).',
+     'Chez autobiz, j\'ai découplé les services autour des événements véhicules, réduit la facture AWS Lambda en optimisant le temps d\'exécution, et contribué à des produits qui ont gagné <strong>+30 %</strong> de ventes en ligne.',
+     'À l\'aise aussi côté front (React, Next.js), ce qui me permet de porter une fonctionnalité de bout en bout. J\'ai encadré une équipe de 4 développeurs et mis en place CI/CD et Docker chez NEXT.']},
+ en:{t:'Senior Back-End JavaScript Developer',s:'Node.js · TypeScript · Event-driven · AWS serverless',tl:'Reliable, decoupled, cost-aware Node.js services.',
+  k:[['AWS','Lambda · SNS in production'],['+30%','online sales'],['15+ yrs','of web systems']],
+  a:['Back-end-leaning developer with <strong>15+ years of experience</strong>: <strong>Node.js / TypeScript</strong> services, REST and GraphQL APIs, and <strong>event-driven serverless on AWS</strong> (SNS pub/sub, Lambda consumers).',
+     'At autobiz I decoupled services around vehicle events, cut the AWS Lambda bill by optimising execution time, and contributed to products that gained <strong>+30%</strong> online sales.',
+     'Comfortable on the front end too (React, Next.js), so I can own a feature end to end. I led a team of 4 developers and introduced CI/CD and Docker at NEXT.']},
+ sk:['back','events','data','cloud','quality','ai','lead']},
+front:{tags:['React','Next.js','Core Web Vitals','Accessibilité|Accessibility'],
+ fr:{t:'Développeur Front-End JavaScript Senior',s:'React · Next.js · TypeScript · Performance web',tl:'Des interfaces rapides, accessibles, multi-marques.',
+  k:[['13 marques','10 pays, une base de code'],['+20 %','de ventes « vendre ma voiture »'],['2 semaines','pour lancer un nouveau pays']],
+  a:['Développeur front-end JavaScript avec <strong>plus de 15 ans d\'expérience</strong> en React, Next.js, TypeScript et Angular, et une forte culture de la <strong>performance web</strong> (Core Web Vitals, Lighthouse) et du SEO technique.',
+     'Chez autobiz, j\'ai piloté la <strong>refonte en React</strong> du site de reprise de véhicules, déployée sur <strong>13 marques et 10 pays</strong> grâce à une solution en marque blanche qui permet de <strong>lancer un pays en 2 semaines</strong>. La refonte de l\'outil d\'estimation « vendre ma voiture » a apporté <strong>+20 %</strong> de ventes.',
+     'Je teste ce que je livre (Playwright, Jest, Cypress) et je sais travailler avec le back-end Node.js quand il le faut.']},
+ en:{t:'Senior Front-End JavaScript Developer',s:'React · Next.js · TypeScript · Web performance',tl:'Fast, accessible, multi-brand interfaces.',
+  k:[['13 brands','10 countries, one codebase'],['+20%','"sell my car" sales'],['2 weeks','to launch a new country']],
+  a:['Front-end JavaScript developer with <strong>15+ years of experience</strong> in React, Next.js, TypeScript and Angular, with a strong focus on <strong>web performance</strong> (Core Web Vitals, Lighthouse) and technical SEO.',
+     'At autobiz I led the <strong>React rebuild</strong> of the vehicle trade-in site, deployed across <strong>13 brands and 10 countries</strong> through a white-label solution that <strong>launches a country in 2 weeks</strong>. Redesigning the "sell my car" valuation tool brought <strong>+20%</strong> sales.',
+     'I test what I ship (Playwright, Jest, Cypress) and work on the Node.js back end when needed.']},
+ sk:['front','perf','quality','back','ai','lead']}};
+const ORDER=['lead','ia','fullstack','back','front'];
+
+const SK={
+ai:{fr:'IA appliquée',en:'Applied AI',v:['API LLM (OpenAI)|LLM APIs (OpenAI)','RAG','Embeddings','Pinecone / Weaviate','Prompt engineering','Agents & outils (Claude, MCP)|Agents & tools (Claude, MCP)','A/B testing de fonctionnalités IA|A/B testing of AI features','n8n']},
+front:{fr:'Front-end',en:'Front-end',v:['React','Next.js','TypeScript','JavaScript ES6+','Zustand','Tailwind CSS','HTML5 / CSS3','React Native','Angular']},
+perf:{fr:'Performance, SEO et accessibilité',en:'Performance, SEO and accessibility',v:['Core Web Vitals','Lighthouse','Optimisation des re-rendus React|React re-render optimisation','Schema.org','robots.txt dynamique|Dynamic robots.txt','Accessibilité WCAG|WCAG accessibility']},
+back:{fr:'Back-end',en:'Back-end',v:['Node.js','TypeScript','API REST|REST APIs','GraphQL','Serverless (AWS Lambda)','WebSockets','Symfony / PHP']},
+events:{fr:'Event-driven et messaging',en:'Event-driven and messaging',v:['AWS SNS (pub/sub, fan-out)','Consommateurs Lambda|Lambda consumers','Découplage par événements|Event-based decoupling','Temps réel Node.js|Real-time Node.js']},
+data:{fr:'Bases de données',en:'Databases',v:['PostgreSQL','MySQL','MongoDB','Redis','DynamoDB','Bases vectorielles|Vector databases']},
+cloud:{fr:'Cloud et DevOps',en:'Cloud and DevOps',v:['AWS (Lambda, SNS)','Optimisation des coûts|Cost optimisation','Docker','GitHub Actions','GitLab CI','Git']},
+quality:{fr:'Qualité',en:'Quality',v:['Playwright (E2E)','Jest','Cypress','Tests A/B|A/B tests','Revue de code|Code review','TDD']},
+lead:{fr:'Leadership et méthodes',en:'Leadership and methods',v:['Encadrement de 4 développeurs|Led 4 developers','Choix techniques|Technical decisions','Découpage des besoins métier|Breaking down business needs','Revue de code|Code review','Accompagnement des développeurs|Developer coaching','Mise en place CI/CD|CI/CD rollout','Agile / Scrum','Documentation technique|Technical documentation']}};
+
+/* bullets: [tags, fr, en]; tags '' = all profiles */
+const J=[
+{fr:{t:'Ingénieur Full Stack JavaScript Senior',w:'Mars 2022 – aujourd\'hui',d:'4 ans 9 mois · Tunis'},en:{t:'Senior Full Stack JavaScript Engineer',w:'Mar 2022 – present',d:'4 yrs 9 mos · Tunis'},co:'autobiz',
+ teams:[{fr:'Équipe Digital Squad · janv. 2026 – aujourd\'hui',en:'Digital Squad team · Jan 2026 – present',b:[
+  ['','Pilotage de la <strong>refonte en React</strong> du site de reprise de véhicules, <strong>déployé sur 13 marques et 10 pays</strong>.','Led the <strong>React rebuild</strong> of the vehicle trade-in website, <strong>deployed across 13 brands and 10 countries</strong>.'],
+  ['','Conception d\'une <strong>solution en marque blanche</strong> : une seule base de code pour toutes les marques et tous les marchés, un nouveau pays lancé en <strong>2 semaines</strong>.','Designed a <strong>white-label solution</strong>: one codebase for every brand and market, a new country launched in <strong>2 weeks</strong>.'],
+  ['ia fullstack front','<strong>Données structurées Schema.org</strong> pour le SEO et la visibilité dans les moteurs de recherche basés sur l\'IA ; génération dynamique du robots.txt par marque et par marché.','<strong>Schema.org structured data</strong> for SEO and visibility in AI-powered search engines; dynamic robots.txt per brand and market.'],
+  ['ia fullstack front','Optimisation des <strong>Core Web Vitals</strong> et mise en place d\'un workflow de développement augmenté par l\'IA.','Optimised <strong>Core Web Vitals</strong> and introduced an AI-augmented development workflow.']]},
+ {fr:'Équipe SaaS · mars 2022 – janv. 2026',en:'SaaS team · Mar 2022 – Jan 2026',b:[
+  ['','Intégration d\'API d\'IA pour l\'inspection automobile : <strong>dans 62 % des cas, l\'IA détecte plus de frais de remise en état que l\'inspection humaine</strong>, soit <strong>280 € économisés en moyenne par véhicule</strong>.','Integrated AI APIs for vehicle inspection: <strong>in 62% of cases the AI finds more reconditioning costs than the human inspection</strong>, saving <strong>€280 on average per vehicle</strong>.'],
+  ['ia','<strong>Tests A/B des fonctionnalités IA</strong> avant chaque mise en production.','<strong>A/B tested AI features</strong> before every production rollout.'],
+  ['','Nouvelles fonctionnalités sur un produit client à fort trafic : <strong>+30 % de ventes en ligne</strong> de véhicules d\'occasion.','New features on a high-traffic customer product: <strong>+30% online used-car sales</strong>.'],
+  ['back fullstack','<strong>Flux serverless event-driven sur AWS</strong> : topics SNS en pub/sub avec fan-out vers des consommateurs Lambda, pour découpler les services autour des événements véhicules.','<strong>Event-driven serverless flows on AWS</strong>: SNS pub/sub topics fanning out to Lambda consumers, decoupling services around vehicle events.'],
+  ['fullstack back front','<strong>Refonte de l\'outil d\'estimation en iframe « vendre ma voiture » : +20 % de ventes.</strong>','<strong>Redesigned the "sell my car" iframe valuation tool: +20% sales.</strong>'],
+  ['fullstack back ia','Réduction de la <strong>facture AWS Lambda</strong> en optimisant l\'impact des filtres sur le temps d\'exécution.','Cut the <strong>AWS Lambda bill</strong> by optimising how filters affect execution time.'],
+  ['fullstack back front','Écriture et maintenance de <strong>tests E2E Playwright</strong> sur plusieurs produits et environnements.','Wrote and maintained <strong>Playwright E2E tests</strong> across several products and environments.'],
+  ['fullstack front','Optimisation d\'un site <strong>Next.js</strong> avec Lighthouse ; correction des re-rendus inutiles (useMemo, useEffect).','Optimised a <strong>Next.js</strong> site with Lighthouse; fixed needless re-renders (useMemo, useEffect).'],
+  ['fullstack back','Revue de code des nouvelles fonctionnalités ; documentation de POC pour du code legacy.','Code review of new features; documented POCs for legacy code.']]}]},
+{fr:{t:'Technical Team Lead',w:'Juin 2020 – févr. 2022',d:'1 an 9 mois · Tunis'},en:{t:'Technical Team Lead',w:'Jun 2020 – Feb 2022',d:'1 yr 9 mos · Tunis'},co:'NEXT',
+ teams:[{b:[
+  ['','Encadrement d\'<strong>une équipe de 4 développeurs</strong> sur deux produits : une plateforme d\'espaces de coworking (Angular, Symfony) et la refonte d\'un site de livraison (React, React Native).','Led <strong>a team of 4 developers</strong> on two products: a coworking-space platform (Angular, Symfony) and the redesign of a delivery website (React, React Native).'],
+  ['','Mise en place des <strong>pipelines CI/CD</strong> et de <strong>Docker</strong> dans une équipe qui n\'en avait pas : builds, tests et déploiements automatisés.','Introduced <strong>CI/CD pipelines</strong> and <strong>Docker</strong> to a team that had neither: automated builds, tests and deployments.'],
+  ['ia back','Automatisation n8n de l\'onboarding client (CRM, e-mail, base interne) : environ <strong>10 heures de travail administratif économisées par mois</strong>.','n8n automation of client onboarding (CRM, email, internal database): about <strong>10 hours of admin work saved per month</strong>.']]}]},
+{fr:{t:'Développeur Front-End JavaScript',w:'Janv. 2018 – avr. 2020',d:'2 ans 4 mois · Dijon'},en:{t:'Front-End JavaScript Developer',w:'Jan 2018 – Apr 2020',d:'2 yrs 4 mos · Dijon'},co:'French Co',
+ teams:[{b:[
+  ['','Plateforme de gestion pour un centre de formation parisien en <strong>Angular 6</strong> (migration depuis Angular 4).','Management platform for a Paris training centre in <strong>Angular 6</strong> (migrated from Angular 4).'],
+  ['','<strong>API REST Node.js</strong> ; collaboration avec l\'équipe back-end Laravel.','<strong>Node.js REST API</strong>; worked with the Laravel back-end team.'],
+  ['','Tests unitaires Jasmine, plans de tests, documentation et formation des utilisateurs, en Scrum.','Jasmine unit tests, test plans, documentation and user training, in Scrum.']]}]},
+{fr:{t:'Développeur Full Stack',w:'Juil. 2013 – janv. 2018',d:'4 ans 7 mois'},en:{t:'Full Stack Developer',w:'Jul 2013 – Jan 2018',d:'4 yrs 7 mos'},co:'Les Argonautes',
+ teams:[{b:[
+  ['','Applications temps réel <strong>Node.js / WebSockets</strong>, applications mobiles Ionic et Angular, applications iPad Salesforce/Veeva.','Real-time <strong>Node.js / WebSockets</strong> apps, Ionic and Angular mobile apps, Salesforce/Veeva iPad apps.'],
+  ['','Module de recherche SOLR, sites Symfony avec API REST, thèmes et plugins WordPress.','SOLR search module, Symfony sites with REST APIs, WordPress themes and plugins.']]}]},
+{fr:{t:'Développeur web et mobile',w:'2010 – 2013',d:'appsnsites · Accesstoebusiness'},en:{t:'Web and mobile developer',w:'2010 – 2013',d:'appsnsites · Accesstoebusiness'},co:'Freelance',
+ teams:[{b:[['','Applications mobiles HTML5 Android/iOS, applications web riches et API REST.','HTML5 Android/iOS mobile apps, rich web applications and REST APIs.']]}]},
+{fr:{t:'Stagiaire ingénieur',w:'2010',d:'Stage de fin d\'études'},en:{t:'Engineering intern',w:'2010',d:'Final-year internship'},co:'eXo Platform',
+ teams:[{b:[['','Développement sur une plateforme collaborative en Java.','Development on a Java collaboration platform.']]}]}];
+
+const P=[
+['','RAG','Système RAG de recherche d\'annonces','RAG ad-search system','Embeddings sur des bases d\'annonces, recherche vectorielle, puis synthèse par LLM selon les critères de l\'utilisateur (budget, lieu, préférences).','Embeddings over ad databases, vector search, then LLM synthesis by user criteria (budget, location, preferences).','React · Node.js · Pinecone / Weaviate','Démo publique|Public demo','https://karimtn.github.io/demo-rag/'],
+['fullstack back front','',  'Plateforme multi-marques en marque blanche','White-label multi-brand platform','Une base de code pour 13 marques et 10 pays ; un nouveau pays en 2 semaines.','One codebase for 13 brands and 10 countries; a new country in 2 weeks.','React · Next.js · Schema.org','En production|In production',''],
+['fullstack back front','','Tableau de bord de données','Data dashboard','Dashboard React sur plusieurs sources ; API Node.js qui prépare les données pour les composants.','React dashboard over several sources; Node.js API that prepares data for the components.','React · Node.js · REST','Projet personnel|Personal project',''],
+['ia back fullstack','','Automatisation de l\'onboarding client','Client onboarding automation','Workflow CRM → e-mail → base interne déclenché à l\'inscription ; environ 10 h économisées par mois.','CRM → email → internal database workflow on signup; about 10 hours saved per month.','n8n · API','En production (NEXT)|In production (NEXT)',''],
+['ia','','Prototypes de vision par IA','AI vision prototypes','Analyse de maladies des plantes à partir de photos, lecture et diagnostic de jantes (OCR, rayures, fissures), extraction de données de captures de trading.','Plant-disease analysis from photos, wheel spec reading and damage check (OCR, scratches, cracks), data extraction from trading screenshots.','Vision · OCR · LLM','Prototypes|Prototypes',''],
+['','','Open source','Open source','Expérimentations React/TypeScript, workflows n8n et projets IA (voice bot, RAG).','React/TypeScript experiments, n8n workflows and AI projects (voice bot, RAG).','GitHub','Public','https://github.com/karimtn']];
+
+const E=[
+['Diplôme d\'ingénieur en informatique|Engineering degree in computer science','ESPRIT, Tunis · 2007 – 2010'],
+['Études technologiques en informatique|Technology studies in computer science','ISI, Tunis'],
+['Parcours Associate AI Engineer|Associate AI Engineer track','DataCamp · en cours|DataCamp · in progress'],
+['Elements of AI for Business','Novembre 2025|November 2025'],
+['Prise en main de l\'API OpenAI|Getting started with the OpenAI API','Octobre 2025|October 2025'],
+['DevOps et Scrum · Tests automatisés|DevOps and Scrum · Automated testing','Jasmine, Selenium']];
+
+const $=id=>document.getElementById(id);
+const tr=(s,l)=>{const p=s.split('|');return l==='en'&&p[1]?p[1]:p[0]};
+const has=(tags,v)=>!tags||tags.split(' ').includes(v==='lead'?'fullstack':v);
+let lang='fr',role='fullstack',expOpen=/print/.test(location.search),DL=null;
+const STANDALONE=!(window.claude&&window.claude.use);
+
+function parse(){const m=(location.hash||'').match(/^#(fr|en)-(lead|ia|fullstack|back|front)$/);if(m){lang=m[1];role=m[2]}}
+function go(l,r){location.hash=l+'-'+r}
+
+function render(){
+  const t=T[lang],v=V[role][lang];
+  document.documentElement.lang=lang;
+  document.title=`${v.t} — Med Karim Bchini`;
+  for(const b of document.querySelectorAll('.lang button'))b.setAttribute('aria-pressed',b.dataset.l===lang);
+  $('c-h1').textContent=t.h1;$('c-p').textContent=t.p;
+  $('c-facts').innerHTML=t.facts.map(f=>`<div><b>${f[0]}</b><span>${f[1]}</span></div>`).join('');
+  $('roles').innerHTML=ORDER.map(k=>{const r=V[k][lang],on=k===role;return `<button class="role" type="button" id="r-${k}" data-r="${k}" aria-current="${on}"><h3>${r.t}</h3><span class="tl">${r.tl}</span><span class="tags">${V[k].tags.map(x=>`<i>${tr(x,lang)}</i>`).join('')}</span><span class="go">${on?t.view:t.open}</span></button>`}).join('');
+  $('prof').innerHTML=`<img src="${PHOTO}" alt="Med Karim Bchini"><div><h2>${v.t}</h2><div class="sub">Med Karim Bchini · ${v.s}</div><div class="kpis">${v.k.map(k=>`<div><b>${k[0]}</b><span>${k[1]}</span></div>`).join('')}</div><button class="dl" id="dl" type="button" ${DL||STANDALONE?'':'hidden'}>${t.pdf}</button><span class="dlmsg" id="dlmsg" role="status"></span></div>`;
+  $('secnav').innerHTML=Object.entries(t.nav).map(([k,n])=>`<a href="#${lang}-${role}" data-s="${k}">${n}</a>`).join('');
+  const jobs=J.map(j=>{const h=j[lang];const body=j.teams.map(tm=>{const b=tm.b.filter(x=>has(x[0],role));if(!b.length)return '';return (tm.fr?`<div class="team">${tm[lang]}</div>`:'')+`<ul>${b.map(x=>`<li>${lang==='fr'?x[1]:x[2]}</li>`).join('')}</ul>`}).join('');
+    return `<div class="job"><div class="when"><b>${h.w}</b>${h.d}</div><div><h5>${h.t} <span class="co">· ${j.co}</span></h5>${body}</div></div>`});
+  const shown=expOpen?jobs:jobs.slice(0,3);
+  const proj=P.filter(p=>has(p[0],role)).sort((a,b)=>(b[1]===(role==='ia'?'RAG':'x'))-(a[1]===(role==='ia'?'RAG':'x')));
+  $('main').innerHTML=`
+  <div class="band fade"><div class="wrap">
+   <section id="s-about" class="two"><div class="about"><h4>${t.nav.about}</h4>${v.a.map(p=>`<p>${p}</p>`).join('')}</div>
+    <aside class="contact"><h4>${t.contact}</h4><dl>
+     <dt>${t.email}</dt><dd><a href="mailto:mohkarb@gmail.com">mohkarb@gmail.com</a></dd>
+     <dt>${t.phone}</dt><dd>+216 22 976 075 (WhatsApp)</dd>
+     <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/bchinimedkarim/">linkedin.com/in/bchinimedkarim</a></dd>
+     <dt>GitHub</dt><dd><a href="https://github.com/karimtn">github.com/karimtn</a></dd>
+     <dt>${t.loc}</dt><dd>${t.locv}</dd>
+     <dt>${t.permit}</dt><dd>${t.permitv}</dd>
+     <dt>${t.langs}</dt><dd>${t.langsv}</dd></dl></aside></section>
+  </div></div>
+  <div class="band"><div class="wrap"><section id="s-skills"><h4>${t.nav.skills}</h4><div class="skills">${V[role].sk.map(k=>`<div class="sk"><b>${SK[k][lang]}</b><div class="chips">${SK[k].v.map(x=>`<i>${tr(x,lang)}</i>`).join('')}</div></div>`).join('')}</div></section></div></div>
+  <div class="band"><div class="wrap"><section id="s-exp"><h4>${t.nav.exp}</h4>${shown.join('')}<button class="more" id="more" type="button">${expOpen?t.less:t.all(jobs.length)}</button></section></div></div>
+  <div class="band"><div class="wrap"><section id="s-proj"><h4>${t.nav.proj}</h4><div class="projects">${proj.map(p=>`<div class="pj"><span class="st">${tr(p[7],lang)}</span><h5>${lang==='fr'?p[2]:p[3]}</h5><p>${lang==='fr'?p[4]:p[5]}</p><p>${p[6]}</p>${p[8]?`<a href="${p[8]}">${p[8].replace('https://','')}</a>`:''}</div>`).join('')}</div></section></div></div>
+  <div class="band"><div class="wrap"><section id="s-edu"><h4>${t.eduT}</h4><ul class="edu">${E.map(e=>`<li><b>${tr(e[0],lang)}</b><span>${tr(e[1],lang)}</span></li>`).join('')}</ul></section></div></div>`;
+  $('foot').textContent=`${t.foot} · ${v.t}`;
+}
+
+document.addEventListener('click',e=>{
+  const l=e.target.closest('.lang button');if(l){go(l.dataset.l,role);return}
+  const r=e.target.closest('.role');if(r){expOpen=false;go(lang,r.dataset.r);document.querySelector('.profile').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});return}
+  const s=e.target.closest('nav.sec a');if(s){e.preventDefault();$('s-'+s.dataset.s)?.scrollIntoView({behavior:'smooth'});return}
+  if(e.target.closest('#dl')){savePdf();return}
+  if(e.target.id==='more'){expOpen=!expOpen;render();$('s-exp').scrollIntoView()}
+});
+window.addEventListener('hashchange',()=>{parse();render()});
+const pdfName=()=>`CV-Med-Karim-Bchini-${V[role][lang].t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^A-Za-z0-9]+/g,'-').replace(/-+$/,'')}-${lang.toUpperCase()}.pdf`;
+async function savePdf(){
+  const t=T[lang],m=$('dlmsg');
+  if(!DL){const a=document.createElement('a');a.href=`pdf/${role}-${lang}.pdf`;a.download=pdfName();document.body.appendChild(a);a.click();a.remove();return}
+  m.textContent=t.pdfwait;
+  try{
+    const res=await fetch(`pdf/${role}-${lang}.pdf`);if(!res.ok)throw {code:'unavailable'};
+    const blob=await res.blob();
+    await DL.save({filename:pdfName(),data:blob});
+    m.textContent='';
+  }catch(err){m.textContent=err&&err.code==='declined'?t.pdfno:t.pdferr}
+}
+parse();render();
+if(window.claude&&window.claude.use){window.claude.use('downloads').then(d=>{if(d){DL=d;const b=$('dl');if(b)b.hidden=false}}).catch(()=>{})}
+}
+</script>
+</body>
+</html>
