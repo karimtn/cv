@@ -1,5 +1,7 @@
 # CV — Med Karim Bchini
 
+Site en ligne : **https://karimtn.github.io/cv/**
+
 Site CV bilingue (français / anglais) avec cinq profils ciblés :
 
 | Profil | Français | English |
@@ -13,3 +15,5 @@ Site CV bilingue (français / anglais) avec cinq profils ciblés :
 Le site tient dans un seul fichier, `index.html`. Ajoutez le code du profil à la fin de l'adresse pour ouvrir directement le bon CV dans la bonne langue.
 
 Les PDF du dossier `pdf/` sont générés depuis la version imprimable du site (`index.html?print#fr-lead`, puis impression A4).
+
+Le site est publié par GitHub Pages depuis la branche `gh-pages` : après une modification sur `main`, poussez aussi `main` vers `gh-pages`.
