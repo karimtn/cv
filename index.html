@@ -365,12 +365,14 @@ function render(){
 
 document.addEventListener('click',e=>{
   const l=e.target.closest('.lang button');if(l){go(l.dataset.l,role);return}
-  const r=e.target.closest('.role');if(r){expOpen=false;go(lang,r.dataset.r);document.querySelector('.profile').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});return}
+  const r=e.target.closest('.role');if(r){expOpen=false;if(r.dataset.r===role)toProfile(true);else{pendingScroll=true;go(lang,r.dataset.r)}return}
   const s=e.target.closest('nav.sec a');if(s){e.preventDefault();$('s-'+s.dataset.s)?.scrollIntoView({behavior:'smooth'});return}
   if(e.target.closest('#dl')){savePdf();return}
   if(e.target.id==='more'){expOpen=!expOpen;render();$('s-exp').scrollIntoView()}
 });
-window.addEventListener('hashchange',()=>{parse();render()});
+let pendingScroll=false;
+function toProfile(smooth){requestAnimationFrame(()=>{const el=document.querySelector('.profile');if(el)el.scrollIntoView({behavior:smooth&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'auto',block:'start'})})}
+window.addEventListener('hashchange',()=>{const prev=role;parse();render();if(pendingScroll||role!==prev){pendingScroll=false;toProfile(true)}});
 const pdfName=()=>`CV-Med-Karim-Bchini-${V[role][lang].t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^A-Za-z0-9]+/g,'-').replace(/-+$/,'')}-${lang.toUpperCase()}.pdf`;
 async function savePdf(){
   const t=T[lang],m=$('dlmsg');
@@ -384,6 +386,7 @@ async function savePdf(){
   }catch(err){m.textContent=err&&err.code==='declined'?t.pdfno:t.pdferr}
 }
 parse();render();
+if(/^#(fr|en)-/.test(location.hash)&&!/print/.test(location.search)){if('scrollRestoration' in history)history.scrollRestoration='manual';window.addEventListener('load',()=>toProfile(false))}
 if(window.claude&&window.claude.use){window.claude.use('downloads').then(d=>{if(d){DL=d;const b=$('dl');if(b)b.hidden=false}}).catch(()=>{})}
 }
 </script>
