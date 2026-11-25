@@ -2,11 +2,12 @@
 
 Site en ligne : **https://karimtn.github.io/cv/**
 
-Site CV bilingue (français / anglais) avec cinq profils ciblés :
+Site CV bilingue (français / anglais) avec six profils ciblés :
 
 | Profil | Français | English |
 | --- | --- | --- |
 | Tech Lead Full-Stack | `#fr-lead` · [PDF](pdf/lead-fr.pdf) | `#en-lead` · [PDF](pdf/lead-en.pdf) |
+| Staff Engineer AI / Backend | `#fr-staff` · [PDF](pdf/staff-fr.pdf) | `#en-staff` · [PDF](pdf/staff-en.pdf) |
 | Ingénieur IA appliquée | `#fr-ia` · [PDF](pdf/ia-fr.pdf) | `#en-ia` · [PDF](pdf/ia-en.pdf) |
 | Développeur Full-Stack JavaScript Senior | `#fr-fullstack` · [PDF](pdf/fullstack-fr.pdf) | `#en-fullstack` · [PDF](pdf/fullstack-en.pdf) |
 | Développeur Back-End JavaScript Senior | `#fr-back` · [PDF](pdf/back-fr.pdf) | `#en-back` · [PDF](pdf/back-en.pdf) |
