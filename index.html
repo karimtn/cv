@@ -110,6 +110,7 @@ footer a{color:#fff}
 @media(max-width:900px){.cover .wrap{grid-template-columns:minmax(0,1fr)}.two{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:600px){.roles{grid-template-columns:minmax(0,1fr)}.job{grid-template-columns:minmax(0,1fr)}.prof{grid-template-columns:minmax(0,1fr)}.facts b{font-size:17px}}
 @media print{
+.contact dd a{white-space:nowrap;font-size:10.5px}
 :root{color-scheme:light}
 body{font-size:11.2px;line-height:1.42;background:#fff;color:#111a14;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 header.top,.cover,nav.sec,#more,.dl,.dlmsg,footer,.fade{animation:none}
@@ -130,7 +131,7 @@ h4{font-size:17px;margin:0 0 8px;color:#12512a}
 .job h5{font-size:13px}.job li{margin:2px 0}
 .projects{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .pj{padding:10px 12px;break-inside:avoid}.pj p{font-size:12px}
-.edu{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.edu li{padding:9px 11px}
+.edu{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.edu li{padding:6px 10px}
 .sk,.edu li{break-inside:avoid}
 h4{break-after:avoid}
 .about p{margin:0 0 7px;max-width:none}.pj h5{font-size:13px}.pj{gap:3px}.edu li span{font-size:11px}.edu b{font-size:12px}.sk b{font-size:11.2px;margin:0;color:#12512a}.prof .sub{margin:3px 0 6px}.kpis div span{font-size:11px}main .band{padding-top:8px}
@@ -206,15 +207,15 @@ lead:{tags:['Encadrement d\'équipe|Team leadership','CI/CD · Docker','React ·
  sk:['lead','front','back','cloud','quality','ai']},
 ia:{tags:['LLM','RAG','Agents · MCP','A/B testing IA|AI A/B testing'],
  fr:{t:'Ingénieur IA appliquée',s:'LLM · RAG · Agents · Full-stack JavaScript',tl:'Des fonctionnalités IA en production, mesurées par tests A/B.',
-  k:[['62 %','des cas : l\'IA détecte plus de frais que l\'humain'],['280 €','économisés en moyenne par véhicule'],['15+ ans','d\'ingénierie logicielle']],
+  k:[['62 %','des cas : l\'IA détecte plus de frais que l\'humain'],['280 €','économisés en moyenne par véhicule']],
   a:['Ingénieur full-stack depuis plus de 15 ans, spécialisé dans l\'<strong>IA appliquée en production</strong>. J\'ai construit un <strong>système RAG de bout en bout</strong> (embeddings, recherche vectorielle, synthèse par LLM) et intégré des <strong>API d\'IA</strong> dans des produits à fort trafic.',
      'Je ne livre pas des démos : chez autobiz, l\'inspection automobile par IA que j\'ai intégrée détecte plus de frais de remise en état que l\'inspection humaine dans <strong>62 % des cas</strong>, soit <strong>280 € économisés en moyenne par véhicule</strong>, résultat validé par tests A/B.',
-     'Mon socle React, Node.js, TypeScript et AWS me permet de porter un système IA du cas d\'usage jusqu\'à l\'interface, au déploiement et au suivi des coûts.']},
+     'Je construis aussi des <strong>agents qui agissent sur le web</strong>, avec des garde-fous et un <strong>humain dans la boucle</strong> pour les actions sensibles. Avec React, Node.js, TypeScript et le cloud (AWS, GCP, Azure), je porte un système IA du cas d\'usage jusqu\'au déploiement et au suivi des coûts.']},
  en:{t:'Applied AI Engineer',s:'LLM · RAG · Agents · Full-stack JavaScript',tl:'AI features in production, measured with A/B tests.',
-  k:[['62%','of cases: AI finds more costs than humans'],['€280','saved on average per vehicle'],['15+ yrs','of software engineering']],
+  k:[['62%','of cases: AI finds more costs than humans'],['€280','saved on average per vehicle']],
   a:['Full-stack engineer for 15+ years, focused on <strong>applied AI in production</strong>. I built an <strong>end-to-end RAG system</strong> (embeddings, vector search, LLM synthesis) and integrated <strong>AI APIs</strong> into high-traffic products.',
      'I ship results, not demos: at autobiz, the AI vehicle inspection I integrated finds more reconditioning costs than the human inspection in <strong>62% of cases</strong>, saving <strong>€280 on average per vehicle</strong>, validated with A/B tests.',
-     'My React, Node.js, TypeScript and AWS background lets me take an AI system from use case to interface, deployment and cost monitoring.']},
+     'I also build <strong>agents that act on the web</strong>, with guardrails and a <strong>human in the loop</strong> for sensitive actions. My React, Node.js, TypeScript and cloud (AWS, GCP, Azure) background lets me take an AI system from use case to interface, deployment and cost monitoring.']},
  sk:['ai','back','front','data','cloud','quality']},
 fullstack:{tags:['React','TypeScript','Node.js','AWS'],
  fr:{t:'Développeur Full-Stack JavaScript Senior',s:'React · Next.js · TypeScript · Node.js · AWS',tl:'Des produits à fort trafic, de l\'API à l\'interface.',
@@ -255,14 +256,14 @@ front:{tags:['React','Next.js','Core Web Vitals','Accessibilité|Accessibility']
 const ORDER=['lead','staff','ia','fullstack','back','front'];
 
 const SK={
-ai:{fr:'IA appliquée',en:'Applied AI',v:['API LLM (OpenAI)|LLM APIs (OpenAI)','RAG','Embeddings','LangChain.js','Azure OpenAI','Azure AI Search','Pinecone / Weaviate','Évaluation de LLM|LLM evaluation','Prompt engineering','Agents & outils (Claude, MCP)|Agents & tools (Claude, MCP)','ASR (Nemotron, Parakeet)','Quantification GGUF|GGUF quantization','A/B testing de fonctionnalités IA|A/B testing of AI features','n8n']},
+ai:{fr:'IA appliquée',en:'Applied AI',v:['API LLM (OpenAI)|LLM APIs (OpenAI)','RAG','Embeddings','LangChain.js','Azure OpenAI','Azure AI Search','Pinecone / Weaviate','Évaluation de LLM|LLM evaluation','Prompt engineering','Agents autonomes (navigation web, humain dans la boucle, MCP)|Autonomous agents (web browsing, human in the loop, MCP)','Automatisation de navigateur (Playwright)|Browser automation (Playwright)','LLM open-source (Qwen, Gemma)|Open-source LLMs (Qwen, Gemma)','ASR (Nemotron, Parakeet)','Quantification GGUF|GGUF quantization','A/B testing de fonctionnalités IA|A/B testing of AI features','n8n']},
 front:{fr:'Front-end',en:'Front-end',v:['React','Next.js','TypeScript','JavaScript ES6+','Zustand','Tailwind CSS','HTML5 / CSS3','React Native','Angular']},
 perf:{fr:'Performance, SEO et accessibilité',en:'Performance, SEO and accessibility',v:['Core Web Vitals','Lighthouse','Optimisation des re-rendus React|React re-render optimisation','Schema.org','robots.txt dynamique|Dynamic robots.txt','Accessibilité WCAG|WCAG accessibility']},
 back:{fr:'Back-end',en:'Back-end',v:['Node.js','TypeScript','Python','FastAPI','API REST|REST APIs','GraphQL','Serverless (AWS Lambda)','WebSockets','Symfony / PHP']},
 arch:{fr:'Architecture et scalabilité',en:'Architecture and scalability',v:['Architecture multi-marques en marque blanche|White-label multi-brand architecture','Event-driven (SNS, Lambda)','Serverless AWS|AWS serverless','Déploiement multi-pays|Multi-country rollout','Optimisation des coûts cloud|Cloud cost optimisation','Choix et revue d\'architecture|Architecture decisions and review']},
 events:{fr:'Event-driven et messaging',en:'Event-driven and messaging',v:['AWS SNS (pub/sub, fan-out)','Consommateurs Lambda|Lambda consumers','Découplage par événements|Event-based decoupling','Temps réel Node.js|Real-time Node.js']},
 data:{fr:'Bases de données',en:'Databases',v:['PostgreSQL','MySQL','MongoDB','Redis','DynamoDB','Bases vectorielles|Vector databases']},
-cloud:{fr:'Cloud et DevOps',en:'Cloud and DevOps',v:['AWS (Lambda, SNS)','Azure (OpenAI, AI Search)','Optimisation des coûts|Cost optimisation','Docker','GitHub Actions','GitLab CI','Git']},
+cloud:{fr:'Cloud et DevOps',en:'Cloud and DevOps',v:['AWS (Lambda, SNS)','Google Cloud (GCP)','Azure (OpenAI, AI Search)','Optimisation des coûts|Cost optimisation','Docker','GitHub Actions','GitLab CI','Git']},
 quality:{fr:'Qualité',en:'Quality',v:['Playwright (E2E)','Jest','Cypress','Tests A/B|A/B tests','Revue de code|Code review','TDD']},
 lead:{fr:'Leadership et méthodes',en:'Leadership and methods',v:['Encadrement de 4 développeurs|Led 4 developers','Choix techniques|Technical decisions','Découpage des besoins métier|Breaking down business needs','Revue de code|Code review','Accompagnement des développeurs|Developer coaching','Mise en place CI/CD|CI/CD rollout','Agile / Scrum','Documentation technique|Technical documentation']}};
 
@@ -272,7 +273,7 @@ const J=[
  teams:[{fr:'Équipe Digital Squad · janv. 2026 – aujourd\'hui',en:'Digital Squad team · Jan 2026 – present',b:[
   ['','Pilotage de la <strong>refonte en React</strong> du site de reprise de véhicules, <strong>déployé sur 13 marques et 10 pays</strong>.','Led the <strong>React rebuild</strong> of the vehicle trade-in website, <strong>deployed across 13 brands and 10 countries</strong>.'],
   ['','Conception d\'une <strong>solution en marque blanche</strong> : une seule base de code pour toutes les marques et tous les marchés, un nouveau pays lancé en <strong>2 semaines</strong>.','Designed a <strong>white-label solution</strong>: one codebase for every brand and market, a new country launched in <strong>2 weeks</strong>.'],
-  ['ia fullstack front','<strong>Données structurées Schema.org</strong> pour le SEO et la visibilité dans les moteurs de recherche basés sur l\'IA ; génération dynamique du robots.txt par marque et par marché.','<strong>Schema.org structured data</strong> for SEO and visibility in AI-powered search engines; dynamic robots.txt per brand and market.'],
+  ['ia fullstack front','<strong>Données structurées Schema.org</strong> pour rendre les sites lisibles par les moteurs de recherche et les <strong>agents IA</strong> ; génération dynamique du robots.txt par marque et par marché.','<strong>Schema.org structured data</strong> to make the sites readable by search engines and <strong>AI agents</strong>; dynamic robots.txt per brand and market.'],
   ['ia fullstack front','Optimisation des <strong>Core Web Vitals</strong> et mise en place d\'un workflow de développement augmenté par l\'IA.','Optimised <strong>Core Web Vitals</strong> and introduced an AI-augmented development workflow.']]},
  {fr:'Équipe SaaS · mars 2022 – janv. 2026',en:'SaaS team · Mar 2022 – Jan 2026',b:[
   ['','Intégration d\'API d\'IA pour l\'inspection automobile : <strong>dans 62 % des cas, l\'IA détecte plus de frais de remise en état que l\'inspection humaine</strong>, soit <strong>280 € économisés en moyenne par véhicule</strong>.','Integrated AI APIs for vehicle inspection: <strong>in 62% of cases the AI finds more reconditioning costs than the human inspection</strong>, saving <strong>€280 on average per vehicle</strong>.'],
@@ -299,19 +300,18 @@ const J=[
   ['','Applications temps réel <strong>Node.js / WebSockets</strong>, applications mobiles Ionic et Angular, applications iPad Salesforce/Veeva.','Real-time <strong>Node.js / WebSockets</strong> apps, Ionic and Angular mobile apps, Salesforce/Veeva iPad apps.'],
   ['','Module de recherche SOLR, sites Symfony avec API REST, thèmes et plugins WordPress.','SOLR search module, Symfony sites with REST APIs, WordPress themes and plugins.']]}]},
 {fr:{t:'Développeur web et mobile',w:'2010 – 2013',d:'appsnsites · Accesstoebusiness'},en:{t:'Web and mobile developer',w:'2010 – 2013',d:'appsnsites · Accesstoebusiness'},co:'Freelance',
- teams:[{b:[['','Applications mobiles HTML5 Android/iOS, applications web riches et API REST.','HTML5 Android/iOS mobile apps, rich web applications and REST APIs.']]}]},
-{fr:{t:'Stagiaire ingénieur',w:'2010',d:'Stage de fin d\'études'},en:{t:'Engineering intern',w:'2010',d:'Final-year internship'},co:'eXo Platform',
- teams:[{b:[['','Développement sur une plateforme collaborative en Java.','Development on a Java collaboration platform.']]}]}];
+ teams:[{b:[['','Applications mobiles HTML5 Android/iOS, applications web riches et API REST. Auparavant, stage ingénieur chez eXo Platform (Java, 2010).','HTML5 Android/iOS mobile apps, rich web applications and REST APIs. Before that, engineering internship at eXo Platform (Java, 2010).']]}]}];
 
 const P=[
-['','RAG','Système RAG de recherche d\'annonces','RAG ad-search system','Embeddings sur des bases d\'annonces, recherche vectorielle, puis synthèse par LLM selon les critères (budget, lieu, préférences). Pipeline Azure en LangChain.js : sortie structurée, filtre OData, réponses citées, garde-fous anti-hallucination.','Embeddings over ad databases, vector search, then LLM synthesis by user criteria (budget, location, preferences). Azure pipeline in LangChain.js: structured output, OData filters, cited answers, anti-hallucination guardrails.','LangChain.js · Azure OpenAI · Azure AI Search · Pinecone / Weaviate','Démo publique|Public demo','https://karimtn.github.io/demo-rag/'],
-['ia','','Évaluation de la qualité des réponses LLM','LLM answer-quality evaluation','Jeu de test annoté avec cas pièges ; recall@k, MRR, nDCG ; détection automatique des hallucinations, des critères non respectés et des abstentions manquées ; juge LLM.','Annotated test set with trap cases; recall@k, MRR, nDCG; automatic detection of hallucinations, violated criteria and missed abstentions; LLM-as-judge.','TypeScript · LangChain.js · Azure OpenAI','Démo publique|Public demo','https://karimtn.github.io/demo-rag/eval.html'],
-['ia','','Agent vocal de prise de commande','Voice ordering agent','Prise de commande à la voix pour un client, hébergée sur Raspberry Pi 5 : orchestration Node.js, service ASR (NVIDIA Nemotron / Parakeet via transcribe.cpp), gestion des hallucinations et auto-correction. Développement du skill asr-gguf-hardware-optimization, qui choisit le modèle quantifié GGUF optimal selon le matériel.','Voice order-taking for a client, hosted on a Raspberry Pi 5: Node.js orchestration, ASR service (NVIDIA Nemotron / Parakeet via transcribe.cpp), hallucination handling and self-correction. Built the asr-gguf-hardware-optimization skill, which picks the optimal quantized GGUF model for the hardware.','Node.js · ASR · Nemotron / Parakeet · GGUF · Raspberry Pi 5','Projet client confidentiel|Confidential client project',''],
+['ia','AGENT','Agent de navigation web avec garde-fous','Web-browsing agent with guardrails','Boucle de 7 décisions (action, cible, risque, vérification…) ; toute action risquée attend l\'accord d\'un humain. Modèle de décision open-source (Qwen 0.8B) + LLM pour la rédaction ; tableau de bord temps réel (probabilités, latences p50/p95, journal rejouable).','A 7-decision loop (search, pick action and target, grade risk, check, deliver); any risky action is blocked until a human approves it. Small open-source decision model (Qwen 0.8B) + LLM for writing; real-time dashboard (probabilities, p50/p95 latency, replayable log).','Node.js · Playwright · LLM open-source · SSE','Démo publique|Public demo','https://github.com/karimtn/jeff-browser'],
+['','RAG','Système RAG de recherche d\'annonces','RAG ad-search system','Embeddings, recherche vectorielle et synthèse par LLM selon les critères (budget, lieu). Pipeline Azure en LangChain.js : sortie structurée, filtre OData, réponses citées, garde-fous anti-hallucination, évaluation (recall@k, MRR, nDCG, juge LLM).','Embeddings over ad databases, vector search, then LLM synthesis by user criteria (budget, location, preferences). Azure pipeline in LangChain.js: structured output, OData filters, cited answers, anti-hallucination guardrails, automated evaluation (recall@k, MRR, nDCG, LLM-as-judge).','LangChain.js · Azure OpenAI · Azure AI Search · Pinecone / Weaviate','Démo publique|Public demo','https://karimtn.github.io/demo-rag/'],
+['ia -ia','','Évaluation de la qualité des réponses LLM','LLM answer-quality evaluation','Jeu de test annoté avec cas pièges ; recall@k, MRR, nDCG ; détection automatique des hallucinations, des critères non respectés et des abstentions manquées ; juge LLM.','Annotated test set with trap cases; recall@k, MRR, nDCG; automatic detection of hallucinations, violated criteria and missed abstentions; LLM-as-judge.','TypeScript · LangChain.js · Azure OpenAI','Démo publique|Public demo','https://karimtn.github.io/demo-rag/eval.html'],
+['ia','','Agent vocal de prise de commande','Voice ordering agent','Prise de commande à la voix sur Raspberry Pi 5 : orchestration Node.js, ASR (NVIDIA Nemotron / Parakeet via transcribe.cpp), gestion des hallucinations et auto-correction ; choix automatique du modèle GGUF quantifié selon le matériel.','Voice ordering on a Raspberry Pi 5: Node.js orchestration, ASR (NVIDIA Nemotron / Parakeet via transcribe.cpp), hallucination handling and self-correction; automatic choice of the quantized GGUF model for the hardware.','Node.js · ASR · Nemotron / Parakeet · GGUF · Raspberry Pi 5','Projet client confidentiel|Confidential client project',''],
 ['fullstack back front','',  'Plateforme multi-marques en marque blanche','White-label multi-brand platform','Une base de code pour 13 marques et 10 pays ; un nouveau pays en 2 semaines.','One codebase for 13 brands and 10 countries; a new country in 2 weeks.','React · Next.js · Schema.org','En production|In production',''],
 ['fullstack back front','','Tableau de bord de données','Data dashboard','Dashboard React sur plusieurs sources ; API Node.js qui prépare les données pour les composants.','React dashboard over several sources; Node.js API that prepares data for the components.','React · Node.js · REST','Projet personnel|Personal project',''],
-['ia back fullstack','','Automatisation de l\'onboarding client','Client onboarding automation','Workflow CRM → e-mail → base interne déclenché à l\'inscription ; environ 10 h économisées par mois.','CRM → email → internal database workflow on signup; about 10 hours saved per month.','n8n · API','En production (NEXT)|In production (NEXT)',''],
-['ia','','Prototypes de vision par IA','AI vision prototypes','Analyse de maladies des plantes à partir de photos, lecture et diagnostic de jantes (OCR, rayures, fissures), extraction de données de captures de trading.','Plant-disease analysis from photos, wheel spec reading and damage check (OCR, scratches, cracks), data extraction from trading screenshots.','Vision · OCR · LLM','Prototypes|Prototypes',''],
-['','','Open source','Open source','Expérimentations React/TypeScript, workflows n8n et projets IA (RAG, évaluation de LLM).','React/TypeScript experiments, n8n workflows and AI projects (RAG, LLM evaluation).','GitHub','Public','https://github.com/karimtn']];
+['ia back fullstack -ia','','Automatisation de l\'onboarding client','Client onboarding automation','Workflow CRM → e-mail → base interne déclenché à l\'inscription ; environ 10 h économisées par mois.','CRM → email → internal database workflow on signup; about 10 hours saved per month.','n8n · API','En production (NEXT)|In production (NEXT)',''],
+['ia -ia','','Prototypes de vision par IA','AI vision prototypes','Analyse de maladies des plantes à partir de photos, lecture et diagnostic de jantes (OCR, rayures, fissures), extraction de données de captures de trading.','Plant-disease analysis from photos, wheel spec reading and damage check (OCR, scratches, cracks), data extraction from trading screenshots.','Vision · OCR · LLM','Prototypes · GitHub|Prototypes · GitHub','https://github.com/karimtn'],
+['fullstack back front','','Open source','Open source','Expérimentations React/TypeScript, workflows n8n et projets IA (RAG, évaluation de LLM).','React/TypeScript experiments, n8n workflows and AI projects (RAG, LLM evaluation).','GitHub','Public','https://github.com/karimtn']];
 
 const E=[
 ['Diplôme d\'ingénieur en informatique|Engineering degree in computer science','ESPRIT, Tunis · 2007 – 2010'],
@@ -319,11 +319,11 @@ const E=[
 ['Parcours Associate AI Engineer|Associate AI Engineer track','DataCamp · en cours|DataCamp · in progress'],
 ['Elements of AI for Business','Novembre 2025|November 2025'],
 ['Prise en main de l\'API OpenAI|Getting started with the OpenAI API','Octobre 2025|October 2025'],
-['DevOps et Scrum · Tests automatisés|DevOps and Scrum · Automated testing','Jasmine, Selenium']];
+['DevOps, Scrum, tests automatisés|DevOps and Scrum · Automated testing','Jasmine, Selenium']];
 
 const $=id=>document.getElementById(id);
 const tr=(s,l)=>{const p=s.split('|');return l==='en'&&p[1]?p[1]:p[0]};
-const has=(tags,v)=>{if(!tags)return true;const t=tags.split(' ');return v==='staff'?t.includes('ia')||t.includes('back'):t.includes(v==='lead'?'fullstack':v)};
+const has=(tags,v)=>{if(!tags)return true;const t=tags.split(' ');if(t.includes('-'+v))return false;return v==='staff'?t.includes('ia')||t.includes('back'):t.includes(v==='lead'?'fullstack':v)};
 let lang='fr',role='fullstack',expOpen=/print/.test(location.search),DL=null;
 const STANDALONE=!(window.claude&&window.claude.use);
 
@@ -343,7 +343,7 @@ function render(){
   const jobs=J.map(j=>{const h=j[lang];const body=j.teams.map(tm=>{const b=tm.b.filter(x=>has(x[0],role));if(!b.length)return '';return (tm.fr?`<div class="team">${tm[lang]}</div>`:'')+`<ul>${b.map(x=>`<li>${lang==='fr'?x[1]:x[2]}</li>`).join('')}</ul>`}).join('');
     return `<div class="job"><div class="when"><b>${h.w}</b>${h.d}</div><div><h5>${h.t} <span class="co">· ${j.co}</span></h5>${body}</div></div>`});
   const shown=expOpen?jobs:jobs.slice(0,3);
-  const proj=P.filter(p=>has(p[0],role)).sort((a,b)=>(b[1]===(role==='ia'||role==='staff'?'RAG':'x'))-(a[1]===(role==='ia'||role==='staff'?'RAG':'x')));
+  const RK=role==='ia'||role==='staff'?{AGENT:2,RAG:1}:{},proj=P.filter(p=>has(p[0],role)).sort((a,b)=>(RK[b[1]]||0)-(RK[a[1]]||0));
   $('main').innerHTML=`
   <div class="band fade"><div class="wrap">
    <section id="s-about" class="two"><div class="about"><h4>${t.nav.about}</h4>${v.a.map(p=>`<p>${p}</p>`).join('')}</div>
